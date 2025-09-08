@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".WaterTrackerActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="82dp"
+        android:background="@color/dark_green"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Fit-Life"
+        app:titleTextColor="@color/white" />
+
+    <!-- Hydration title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hydration"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1A237E"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Circular progress -->
+    <com.example.fit_life.CircularProgressView
+        android:id="@+id/circularProgressView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/titleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <!-- ML text -->
+    <TextView
+        android:id="@+id/mlText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 ml"
+        android:textSize="18sp"
+        android:textColor="#1A237E"
+        android:layout_below="@id/circularProgressView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
+
+    <!-- Button Layout -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mlText"
+        android:layout_above="@id/bottomNavigationView"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Row 1 Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn50ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#A9DEF9"
+                android:text="50 ml"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btn100ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#ff99c8"
+                android:text="100 ml"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btn150ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#d0f4de"
+                android:text="150 ml"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Row 2 Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn250ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#fcf6bd"
+                android:text="250 ml"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btn350ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#e4c1f9"
+                android:text="350 ml"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btn500ml"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="#ffadad"
+                android:text="500 ml"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Reset Button -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/dark_green"
+                android:text="Reset"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Bottom Navigation View -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>
+
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/layout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#FFFFFF"-->
+<!--    tools:context=".WaterTrackerActivity">-->
+
+<!--    &lt;!&ndash; Toolbar &ndash;&gt;-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:minHeight="82dp"-->
+<!--        android:background="@color/dark_green"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--        app:title="Fit-Life"-->
+<!--        app:titleTextColor="@color/white"-->
+<!--        />-->
+
+<!--    &lt;!&ndash; Hydration title &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/titleTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hydration"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#1A237E"-->
+<!--        android:layout_below="@id/toolbar"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_centerHorizontal="true" />-->
+
+<!--    &lt;!&ndash; Circular progress &ndash;&gt;-->
+<!--    <com.example.fit_life.CircularProgressView-->
+<!--        android:id="@+id/circularProgressView"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:layout_below="@id/titleTextView"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="30dp" />-->
+
+<!--    &lt;!&ndash; ML text &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/mlText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="0 ml"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="#1A237E"-->
+<!--        android:layout_below="@id/circularProgressView"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="8dp" />-->
+
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/buttonLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/mlText"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical">-->
+
+<!--        &lt;!&ndash;    row 1&ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn50ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#A9DEF9"-->
+<!--                android:text="50 ml"-->
+<!--                android:textColor="#000000" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn100ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#ff99c8"-->
+<!--                android:text="100 ml"-->
+<!--                android:textColor="#000000" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn150ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#d0f4de"-->
+<!--                android:text="150 ml"-->
+<!--                android:textColor="#000000" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Row 2: Container for 3 buttons (250ml, 350ml, 500ml) &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn250ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#fcf6bd"-->
+<!--                android:text="250 ml"-->
+<!--                android:textColor="#000000" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn350ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#e4c1f9"-->
+<!--                android:text="350 ml"-->
+<!--                android:textColor="#000000" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn500ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#ffadad"-->
+<!--                android:text="500 ml"-->
+<!--                android:textColor="#000000" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash; Reset Button Container &ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/resetButton"-->
+<!--                android:layout_width="116dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="@color/dark_green"-->
+<!--                android:text="Reset"-->
+<!--                android:textColor="@color/white" />-->
+<!--        </LinearLayout>-->
+
+
+
+<!--    </LinearLayout>-->
+
+
+
+
+<!--</RelativeLayout>-->
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#FFFFFF"-->
+<!--    tools:context=".WaterTrackerActivity">-->
+
+<!--    &lt;!&ndash; Toolbar &ndash;&gt;-->
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:minHeight="82dp"-->
+<!--        android:background="@color/dark_green"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--        app:title="Fit-Life"-->
+<!--        app:titleTextColor="@color/white" />-->
+
+<!--    &lt;!&ndash; Title: Current Hydration &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/titleTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Current Hydration"-->
+<!--        android:textSize="22sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#1A237E"-->
+<!--        android:layout_below="@id/toolbar"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_centerHorizontal="true"/>-->
+
+<!--    &lt;!&ndash; Circle ProgressBar &ndash;&gt;-->
+
+<!--    &lt;!&ndash; 85% Text (inside circle) &ndash;&gt;-->
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/circularProgress"-->
+<!--        style="@android:style/Widget.ProgressBar.Horizontal"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:layout_below="@id/titleTextView"-->
+<!--        android:layout_marginLeft="80dp"-->
+<!--        android:layout_marginTop="34dp"-->
+<!--        android:indeterminate="false"-->
+<!--        android:max="100"-->
+<!--        android:progress="85"-->
+<!--        android:progressDrawable="@drawable/circular_progress_blue" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/percentageText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="85%"-->
+<!--        android:textSize="36sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="#1A237E"-->
+<!--        android:layout_centerInParent="true"/>-->
+
+<!--    &lt;!&ndash; 1300 ml Text (below percentage) &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/mlText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="1300 ml"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="#1A237E"-->
+<!--        android:layout_below="@id/percentageText"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="8dp"/>-->
+
+<!--    &lt;!&ndash; Water Buttons &ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/buttonLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/circularProgress"-->
+<!--        android:layout_marginTop="130dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn250ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#E0F7FA"-->
+<!--                android:text="💧 250 ml"-->
+<!--                android:textColor="#000000" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn500ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#FFEBEE"-->
+<!--                android:text="🥤 500 ml"-->
+<!--                android:textColor="#000000" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn180ml"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#FFFDE7"-->
+<!--                android:text="☕ 180 ml"-->
+<!--                android:textColor="#000000" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btn250ml2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="8dp"-->
+<!--                android:backgroundTint="#F3E5F5"-->
+<!--                android:text="🍵 250 ml"-->
+<!--                android:textColor="#000000" />-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+
+<!--</RelativeLayout>-->
